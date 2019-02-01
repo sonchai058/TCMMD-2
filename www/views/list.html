@@ -1,0 +1,145 @@
+<ion-view view-title="{{name}}">
+    <ion-nav-buttons side="right" ng-show="false">
+        <button class="button button-icon button-clear ion-ios-search-strong" onclick="$('#search_content').toggle(300); $('ion-radio[name=case_option]:first-child').click(); if($('#choice option').length>2 )setTimeout(function(){$('#choice option:eq(0)').remove();},200);">
+            Search
+        </button>
+    </ion-nav-buttons>
+<ion-list radio-group>
+
+</ion-list>
+    <ion-content>
+
+        <div id="search_content" class="text-center" hidden='hidden'>
+
+            <ion-radio name="choice" ng-model="search.choice" ng-value=1 align="left">Keyword</ion-radio>
+            <ion-radio name="choice" ng-model="search.choice" ng-value=2 align="left">Options</ion-radio>
+
+            <br>
+
+            <label class="item item-input item-select" style='border: 0'>
+                <div class="input-label">
+                    <h2><b><i class="icon ion-android-search button-energized"></i> Search Bar</b></h2>
+                </div>
+                
+                <!--
+                <select id="choice" ng-model="search.choice">
+                    <option value='1' selected>Keyword</option>
+                    <option value='2'>Options</option>
+                </select>
+                -->
+
+            </label>
+            <div class="list list-inset" style='margin-bottom: 8px' ng-show="search.choice == 1">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" ng-model="search.keyword" placeholder="Keyword">
+                </label>
+                <br>
+                <button name='bt_opt1' class="button button-positive" ng-click="Search1()">
+                    Search
+                </button>
+            </div>
+            
+            <div style='margin-bottom: 8px; padding-left: 30px; padding-right: 30px;' ng-hide="search.choice == 1">
+
+                        <h4 align='left' style="margin: 10px;">Zone/Location</h4>
+                        <div id="zone_content1">
+                            <ion-radio name="zone" ng-model="search.zone" ng-value=1 align="left">เจ็ดยอด</ion-radio>
+                            <ion-radio name="zone" ng-model="search.zone" ng-value=2 align="left">หน้ามอ</ion-radio>
+                            <ion-radio name="zone" ng-model="search.zone" ng-value=3 align="left">นิมมานเหมินท์-ศิริมังคลาจารย์</ion-radio>
+                            <ion-radio name="zone" ng-model="search.zone" ng-value=4 align="left">สันติธรรม</ion-radio>
+                            <ion-radio name="zone" ng-model="search.zone" ng-value=5 align="left">ทั้งหมด</ion-radio>
+                        </div>
+
+                        <h4 align='left' style="margin: 10px;">Rate</h4>
+                        <div id="zone_content2">
+                            <ion-radio name="rate" ng-model="search.rate" ng-value=1 align="left">0-1</ion-radio>
+                            <ion-radio name="rate" ng-model="search.rate" ng-value=2 align="left">2-3</ion-radio>
+                            <ion-radio name="rate" ng-model="search.rate" ng-value=3 align="left">4-5</ion-radio>
+                            <ion-radio name="rate" ng-model="search.rate" ng-value=4 align="left">ทั้งหมด</ion-radio>
+                        </div>
+
+
+                        <h4 align='left' style="margin: 10px;">Price</h4>
+                        <div id="zone_content3">
+                            <ion-radio name="price" ng-model="search.price" ng-value=1 align="left">< 1000</ion-radio>
+                            <ion-radio name="price" ng-model="search.price" ng-value=2 align="left">1000 - 3000</ion-radio>
+                            <ion-radio name="price" ng-model="search.price" ng-value=3 align="left">3001 - 5000</ion-radio>
+                            <ion-radio name="price" ng-model="search.price" ng-value=3 align="left">> 5000</ion-radio>
+                            <ion-radio name="price" ng-model="search.price" ng-value=4 align="left">ทั้งหมด</ion-radio>
+                        </div>
+                        <br>
+
+
+                <!--
+                <ul class="list">
+                    <li class="item">
+                        <label class="item item-input item-select" style="border:0px; ">
+                            <div class="input-label text-left">
+                                Zone/Location
+                            </div>
+                            <select ng-model="search.zone">
+                                <option selected>เลือกข้อมูล</option>
+                                <option value=1>เจ็ดยอด</option>
+                                <option value=2>หน้ามอ</option>
+                                <option value=3>นิมมานเหมินท์-ศิริมังคลาจารย์</option>
+                                <option value=4>สันติธรรม</option>
+                                <option value=5>ทั้งหมด</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label class="item item-input item-select" style="border:0px; ">
+                            <div class="input-label text-left">
+                                Rate
+                            </div>
+                            <select ng-model="search.rate">
+                                <option selected>เลือกข้อมูล</option>
+                                <option value=1>0-1</option>
+                                <option value=2>2-3</option>
+                                <option value=3>4-5</option>
+                                <option value=4>ทั้งหมด</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="item">
+                        <label class="item item-input item-select" style="border:0px; ">
+                            <div class="input-label text-left">
+                                Price
+                            </div>
+                            <select ng-model="search.price">
+                                <option selected>เลือกข้อมูล</option>
+                                <option value=1>< 1000</option>
+                                <option value=2>1000 - 3000</option>
+                                <option value=3>3001 - 5000</option>
+                                <option value=4>> 5000</option>
+                                <option value=5>ทั้งหมด</option>
+                            </select>
+                        </label>
+                    </li>
+                    
+                </ul>
+                -->
+                <div class='text-center'>
+                    <button name='bt_opt2' class="button button-positive" ng-click="Search2()">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div ng-bind='result_search' style='margin:15px;'></div>
+
+        <div class="list">
+            <a class="item item-thumbnail-left" ng-repeat="item in items" ng-click="showDetail({{ item.item_id }})">
+                <img ng-src="img/{{ item.img }}">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+            </a>
+        </div>
+        <br>
+        <br>
+    </ion-content>
+
+</ion-view>
+
+<!-- href="#/detail/{{ item.item_id }}" -->

@@ -1,0 +1,26 @@
+/* Empty. Add your own CSS if you like */
+
+#map {
+  width: 100%;
+  height: 400px;
+}
+
+.scroll {
+  height: 100%;
+}
+
+.active i{
+	color: #fff;
+}
+.bookmark {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.scroll-bar-indicator
+{
+    display: none;
+}
+.ion-radio {
+	font-size: 13px;
+}
