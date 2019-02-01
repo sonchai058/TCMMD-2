@@ -1,0 +1,45 @@
+<ion-view view-title="{{detail_id}}">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+
+                <img ng-src="img/{{ item.img }}">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.address }}</p>
+                <h4>Contact: {{ item.tel }}</h4>
+                <h4>Rate: {{ item.rate_statr.toFixed(1) }}/5.0</h4>
+                <h4>Price: {{ item.price | currency:"BTH$" }}</h4>
+                <button ng-click="bookmark_save(1)" ng-show="item.bookmark == 0" class="button button button-stable bookmark" href="javascript:void(0)">
+                    <i class="icon ion-bookmark"></i>
+                </button>
+                <button ng-click="bookmark_save(0)" ng-show="item.bookmark == 1" class="button button button-energized bookmark" href="javascript:void(0)">
+                    <i class="icon ion-bookmark"></i>
+                </button>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" ng-src="img/{{ item.img }}" repeat-done="repeatDone()">
+                <p>
+                    {{ item.description }}
+                </p>
+                
+                <h2 ng-show="imgs.length>0">Gallery</h2>
+                <ion-slide-box ng-show="imgs.length>0">
+                  <ion-slide ng-repeat="img in imgs">
+                    <img width="100%" height="100%" ng-src="img/{{ img.img_src }}">
+                  </ion-slide>
+                </ion-slide-box>
+
+                <div class="row">
+                    <div class="col text-right">
+                        <button class="button button-outline button-positive" ng-click="openMap()" style="margin-bottom:2px;">
+                            <i class="ion-android-navigate"></i>&nbsp;Navigator
+                        </button>
+                        <br/>
+                        <div id="map" data-tap-disabled="true"></div>
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

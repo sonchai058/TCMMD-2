@@ -1,0 +1,13 @@
+<ion-view view-title="Favorites">
+    <ion-content>
+        <div class="list">
+            <a class="item item-thumbnail-left" ng-repeat="item in items" ng-click="showDetail({{ item.item_id }})">
+                <img ng-src="img/{{ item.img }}">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+            </a>
+        </div>
+        <br>
+        <br>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="CordovaLib-6.4.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CordovaLib/build/intermediates/bundles/release/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/CordovaLib/build/intermediates/bundles/release/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

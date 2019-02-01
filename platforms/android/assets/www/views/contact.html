@@ -1,0 +1,18 @@
+<ion-view view-title="{{name}}">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="profile in profiles" href="tel:{{ profile.tel }}">
+                <div class="item-button-right">
+                    <h1>{{ profile.name }}</h1>
+                    <p>{{ profile.tel }}</p>
+                    <button class="button button-balanced">
+                        <i class="icon ion-ios-telephone"></i>
+                    </button>
+                </div>
+            </ion-item>
+        </ion-list>
+        <br>
+        <br>
+        <br>
+    </ion-content>
+</ion-view>
