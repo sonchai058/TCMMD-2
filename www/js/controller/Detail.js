@@ -18,7 +18,7 @@ app.controller('DetailController', ['$scope', '$stateParams', '$state', 'DataSer
     $ionicPlatform.ready(function() {
         $ionicLoading.show();
 
-        var query = "SELECT * FROM items where menu_id=3 AND item_id=" + $scope.detail_id;
+        var query = "SELECT * FROM items where (menu_id<9 AND menu_id>2) AND item_id=" + $scope.detail_id;
         try {
             $cordovaSQLite.execute(db, query).then(function(res) {
 
@@ -29,6 +29,7 @@ app.controller('DetailController', ['$scope', '$stateParams', '$state', 'DataSer
                     if($ionicPlatform.is('ios')){
                         //$window.location.href = "maps://maps.apple.com/?q=" + lat + "," + long;
                         //window.location.href = "maps://maps.apple.com/?q=" + lat + "," + long;
+                        //http://maps.google.com/maps
                         $window.location.href = "maps://maps.apple.com/?q=" + $scope.item.latitude + "," + $scope.item.longitude;
                     }else {
                         $window.location.href = 'geo:' + $scope.item.latitude + ',' + $scope.item.longitude;

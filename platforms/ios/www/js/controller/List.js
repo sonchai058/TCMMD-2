@@ -3,7 +3,7 @@ app.controller('ListController', ['$scope', '$stateParams', '$state', 'DataServi
     console.log($stateParams.list_id);
     $scope.list_id = $stateParams.list_id;
 
-    $scope.ArrayName = ['Hotels', 'Apartments', 'Resorts', 'Attractions', 'Culture, Temple, Museums, Gallery, Old City, Zoo,   Waterfall, National park', 'Restaurant, Food Center, Cafe', 'Market, Shopping Malls', 'Sports, Spa, Fitness', 'University, School, Public Center, Library'];
+    $scope.ArrayName = ['Hotels', 'Apartments', 'Resorts', 'Guesthouses', 'Culture, Temple, Museums, Gallery, Old City, Zoo,   Waterfall, National park', 'Restaurant, Food Center, Cafe', 'Market, Shopping Malls', 'Sports,Spa ,Fitness', 'University, School, Public center, Library'];
     $scope.name = $scope.ArrayName[$scope.list_id - 1];
 
     $('#search_content').hide();
@@ -13,12 +13,12 @@ app.controller('ListController', ['$scope', '$stateParams', '$state', 'DataServi
     $scope.search.choice = 1;
 
     $scope.items = [];
-    if ($scope.list_id <= 4 && $scope.list_id >= 1) {
+    if ($scope.list_id <= 9 && $scope.list_id >= 1) {
 
         $ionicPlatform.ready(function() {
             $ionicLoading.show();
 
-            var query = "SELECT * FROM items where menu_id=3 AND cate_id=" + $scope.list_id;
+            var query = "SELECT * FROM items where (menu_id<9 AND menu_id>2) AND cate_id=" + $scope.list_id;
             try {
                 $cordovaSQLite.execute(db, query).then(function(res) {
 
@@ -95,7 +95,7 @@ app.controller('ListController', ['$scope', '$stateParams', '$state', 'DataServi
             $ionicPlatform.ready(function() {
                 $ionicLoading.show();
 
-                var query = "SELECT * FROM items where menu_id=3 AND cate_id=" + $scope.list_id + " AND (name like '%" + $scope.search.keyword + "%' OR description like '%" + $scope.search.keyword + "%')";
+                var query = "SELECT * FROM items where (menu_id<9 AND menu_id>2) AND cate_id=" + $scope.list_id + " AND (name like '%" + $scope.search.keyword + "%' OR description like '%" + $scope.search.keyword + "%')";
                 try {
                     $cordovaSQLite.execute(db, query).then(function(res) {
 
@@ -127,7 +127,7 @@ app.controller('ListController', ['$scope', '$stateParams', '$state', 'DataServi
             $ionicPlatform.ready(function() {
                 $ionicLoading.show();
 
-                var query = "SELECT * FROM items where menu_id=3 AND cate_id=" + $scope.list_id;
+                var query = "SELECT * FROM items where (menu_id<9 AND menu_id>2) AND cate_id=" + $scope.list_id;
                 try {
                     $cordovaSQLite.execute(db, query).then(function(res) {
 
@@ -168,7 +168,7 @@ app.controller('ListController', ['$scope', '$stateParams', '$state', 'DataServi
 
             $scope.items = [];
 
-            var query = "SELECT * FROM items where menu_id=3 AND cate_id=" + $scope.list_id;
+            var query = "SELECT * FROM items where (menu_id<9 AND menu_id>2) AND cate_id=" + $scope.list_id;
 
             if($scope.search.zone) {
                 query = query+' AND zone_id='+$scope.search.zone;
@@ -224,7 +224,7 @@ app.controller('ListController', ['$scope', '$stateParams', '$state', 'DataServi
             $ionicPlatform.ready(function() {
                 $ionicLoading.show();
 
-                var query = "SELECT * FROM items where menu_id=3 AND cate_id=" + $scope.list_id;
+                var query = "SELECT * FROM items where (menu_id<9 AND menu_id>2) AND cate_id=" + $scope.list_id;
                 try {
                     $cordovaSQLite.execute(db, query).then(function(res) {
 

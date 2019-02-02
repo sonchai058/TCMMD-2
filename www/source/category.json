@@ -2,5 +2,10 @@
 {"cate_id":1,"menu_id": 3,"name":"Hotels"},
 {"cate_id":2,"menu_id": 3,"name":"Apartments"},
 {"cate_id":3,"menu_id": 3,"name":"Resorts"},
-{"cate_id":4,"menu_id": 3,"name":"Guesthouses"}
+{"cate_id":4,"menu_id": 3,"name":"Guesthouses"},
+{"cate_id":5,"menu_id": 4,"name":"Attractions"},
+{"cate_id":6,"menu_id": 5,"name":"Food & Drink"},
+{"cate_id":7,"menu_id": 6,"name":"Shopping"},
+{"cate_id":8,"menu_id": 7,"name":"Healthy"},
+{"cate_id":9,"menu_id": 8,"name":"Academic & Public center"}
 ]

@@ -28,7 +28,7 @@ var app = angular.module('starter', ['ionic', 'ngCordova'])
 
         if (window.cordova) {
             //db = $cordovaSQLite.openDB({ name: "nextflow.db" }); //device
-            db = $cordovaSQLite.openDB({ name: "project.db", location: 'default' }); //device
+            db = $cordovaSQLite.openDB({ name: "project1.db", location: 'default' }); //device
             $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS items (item_id integer primary key, menu_id integer, cate_id integer, zone_id integer, name text, description text, address text, tel text, img text, price real, rate_statr integer, bookmark integer, latitude real, longitude real)");
             $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS images (img_id integer primary key, item_id integer, img_src text)");
 
@@ -37,7 +37,7 @@ var app = angular.module('starter', ['ionic', 'ngCordova'])
 
             console.log("Android");
         } else {
-            db = window.openDatabase("project5.db", '1', 'my', 1024 * 1024 * 100); // browser
+            db = window.openDatabase("project6.db", '1', 'my', 1024 * 1024 * 100); // browser
             $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS items (item_id integer primary key, menu_id integer, cate_id integer, zone_id integer, name text, description text, address text, tel text, img text, price real, rate_statr integer, bookmark integer, latitude real, longitude real)");
             $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS images (img_id integer primary key, item_id integer, img_src text)");
 
