@@ -31,6 +31,7 @@ app.controller('DetailController', ['$scope', '$stateParams', '$state', 'DataSer
                         //window.location.href = "maps://maps.apple.com/?q=" + lat + "," + long;
                         //http://maps.google.com/maps
                         $window.location.href = "maps://maps.apple.com/?q=" + $scope.item.latitude + "," + $scope.item.longitude;
+                        $window.location.href = "http://maps.google.com/maps?q=" + $scope.item.latitude + "," + $scope.item.longitude;
                     }else {
                         $window.location.href = 'geo:' + $scope.item.latitude + ',' + $scope.item.longitude;
                     }
